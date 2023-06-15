@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <VBtn color="primary">Vuetify のボタン</VBtn>
-  </div>
+  <Card/>
 </template>
