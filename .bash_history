@@ -21,3 +21,16 @@ php artisan config:cache
 php artisan config:clear
 php artisan config:clear
 exit
+cd backend
+php artisan make:model Article -a
+php artisan make:model Article -a
+php artisan route:list
+exit
+cd backend
+php artisan migrate:fresh --seed
+php artisan migrate:fresh --seed
+exiy
+exit
+cd backend
+php artisan migrate:fresh --seed
+exit

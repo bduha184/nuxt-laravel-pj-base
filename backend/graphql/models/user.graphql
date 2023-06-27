@@ -1,0 +1,12 @@
+extend type Query {
+     users(
+      name: String @where(operator: "like")
+    ): [User!]! @paginate(defaultCount: 10)
+}
+
+query getUser{
+    users {
+        name
+        email
+    }
+}
