@@ -1,17 +1,10 @@
-<script setup>
-
-const {users} = await useAsyncGql('getUsers');
-console.log(users);
-
-
-</script>
+<script setup></script>
 
 <template>
-<div>
+  <v-app
+  dark
+  >
   <Header/>
-  <Card/>
-  <div>
-  </div>
-  <slot/>
-</div>
+  <Contents/>
+  </v-app>
 </template>
