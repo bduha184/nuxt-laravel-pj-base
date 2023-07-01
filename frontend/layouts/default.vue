@@ -5,6 +5,10 @@
   dark
   >
   <Header/>
-  <Contents/>
+  <v-main>
+    <Contents/>
+    <slot/>
+  </v-main>
+  <Footer/>
   </v-app>
 </template>

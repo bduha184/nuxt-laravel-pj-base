@@ -1,13 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import contents from '@/plugins/common/contents'
 import {ref} from 'vue';
 import {Url} from '@/constants/url';
 
-// type Breadcrumb = {
-//   text:string,
-//   disabled?:boolean,
-//   href?:string
-// }
 
 const items = computed(()=> {
   return [
