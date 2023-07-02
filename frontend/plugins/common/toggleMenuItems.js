@@ -1,28 +1,49 @@
 export default {
   toggleMenuItems: [
     {
-      name: 'HOME',
-      url: '#'
+      text: "ホーム",
+      icon: "mdi-account",
+      func: () => router.push(Url.TOP),
     },
     {
-      name: 'マイページ',
-      url: '#'
+      text: "マイページ",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
     },
     {
-      name: 'WORK',
-      url: '#'
+      text: "サイクリング募集",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
     },
     {
-      name: 'SERVICE',
-      url: '#'
+      text: "サイクリング情報",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
     },
     {
-      name: 'BLOG',
-      url: '#'
+      text: "みんなの愛車",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
     },
     {
-      name: 'ACCESS',
-      url: '#'
-    }
+      text: "ルート検索",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
+    },
+    {
+      text: "新規登録",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
+    },
+    {
+      text: "ログイン",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
+    },
+    {
+      text: "ログアウト",
+      icon: "mdi-account",
+      func: () => router.push(Url.MEMBER),
+    },
   ]
 }
