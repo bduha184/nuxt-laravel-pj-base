@@ -19,4 +19,12 @@ export const Url = {
   POSTS: getFrontUrl('/posts'),
   /** マイページ */
   MEMBER: getFrontUrl('/member'),
+  /** サイクリング募集 */
+  RECRUIT: getFrontUrl('/recruit'),
+  /** サイクリング情報 */
+  INFO: getFrontUrl('/info'),
+  /** みんなの愛車 */
+  INTRODUCTION: getFrontUrl('/introduction'),
+  /** ルート検索 */
+  SEARCH: getFrontUrl('/search'),
 }

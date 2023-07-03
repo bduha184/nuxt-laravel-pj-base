@@ -1,71 +1,66 @@
 <script setup lang="ts">
 import { computed, reactive } from "vue";
-import { useRouter } from "nuxt/app";
 import { Url } from "@/constants/url";
-import constants from "@/plugins/common/toggleMenuItems";
-const menuItems = constants.toggleMenuItems;
-
+import {MenuItems} from "@/constants/menuItems";
+import { useRouter } from "nuxt/app";
 const router = useRouter();
+import { mdiAccount } from '@mdi/js'
 
 const state = reactive({
   name: "",
   drawer: false,
 });
 
-const items = computed(() => {
+const toggleMenu = () => {
+  state.drawer = !state.drawer;
+};
+
+const menuLinks = computed(()=> {
   return [
-    {
+  {
       text: "ホーム",
-      icon: "mdi-account",
+      icon: "mdiAccount",
       func: () => router.push(Url.TOP),
     },
     {
       text: "マイページ",
-      icon: "mdi-account",
+      icon: "mdiAccount",
       func: () => router.push(Url.MEMBER),
     },
     {
       text: "サイクリング募集",
-      icon: "mdi-account",
-      func: () => router.push(Url.MEMBER),
+      icon: "mdiAccount",
+      func: () => router.push(Url.RECRUIT),
     },
     {
       text: "サイクリング情報",
-      icon: "mdi-account",
-      func: () => router.push(Url.MEMBER),
+      icon: "mdiAccount",
+      func: () => router.push(Url.INFO),
     },
     {
       text: "みんなの愛車",
-      icon: "mdi-account",
-      func: () => router.push(Url.MEMBER),
+      icon: "mdiAccount",
+      func: () => router.push(Url.INTRODUCTION),
     },
     {
       text: "ルート検索",
-      icon: "mdi-account",
-      func: () => router.push(Url.MEMBER),
+      icon: "mdiAccount",
+      func: () => router.push(Url.SEARCH),
     },
     {
       text: "新規登録",
-      icon: "mdi-account",
-      func: () => router.push(Url.MEMBER),
+      icon: "mdiAccount",
+      func: () => router.push(Url.SIGNUP),
     },
     {
       text: "ログイン",
-      icon: "mdi-account",
-      func: () => router.push(Url.MEMBER),
+      icon: "mdiAccount",
+      func: () => router.push(Url.LOGIN),
     },
-    {
-      text: "ログアウト",
-      icon: "mdi-account",
-      func: () => router.push(Url.MEMBER),
-    },
-  ];
-});
+  ]
+})
 
-const toggleMenu = () => {
-  state.drawer = !state.drawer;
-};
-</script>
+</script>ˇ
 
 <template>
   <div>
@@ -74,25 +69,26 @@ const toggleMenu = () => {
       bottom
       temporary
       location="right"
-      overlay-opacity="1"
+      class="pt-15"
     >
       <v-list>
         <v-list-item
-          prepend-avatar="/images/user_dummy.png"
-          subtitle="Logged in"
+        prepend-avatar="/images/user_dummy.png"
+        subtitle="Logged in"
         />
       </v-list>
       <v-divider />
       <v-list density="compact">
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in menuLinks"
           :key="i"
           :value="item"
           active-color="primary"
           @click="item.func"
         >
-          <v-list-item-avatar start>
-            <v-icon :icon="item.icon" />
+          <v-list-item-avatar>
+            <!-- <v-icon :icon="item.icon" /> -->
+            <v-icon :icon="mdiAccount" />
           </v-list-item-avatar>
           <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
@@ -113,17 +109,8 @@ const toggleMenu = () => {
         variant="text"
         class="text-white visible md:invisible"
         color="red"
-        z-index="1010"
         @click.stop="toggleMenu"
       />
     </v-app-bar>
   </div>
 </template>
-
-<style lang="scss" scoped>
-// @use '../assets/styles/mixin';
-.v-toolbar-title__placeholder {
-  overflow: visible !important;
-  margin-right: 50px !important;
-}
-</style>

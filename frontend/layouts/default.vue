@@ -6,7 +6,7 @@
   >
   <Header/>
   <v-main>
-    <Contents/>
+    <!-- <Contents/> -->
     <slot/>
   </v-main>
   <Footer/>

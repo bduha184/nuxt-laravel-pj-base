@@ -5,6 +5,7 @@ import * as directives from 'vuetify/directives'
 import "vuetify/styles";
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 
+
 export default defineNuxtPlugin(nuxtApp => {
   const vuetify = createVuetify({
     ssr: true,
@@ -15,7 +16,7 @@ export default defineNuxtPlugin(nuxtApp => {
         light: {
           colors: {
             primary: '#fff',
-            background: '#fff',
+            background: '#ddd',
             error: '#d63031',
             info: '#0984e3',
             secondary: '#EDF2F7',
