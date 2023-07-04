@@ -1,5 +1,7 @@
 import {Url} from '@/constants/url';
 import { useRouter } from "nuxt/app";
+import {Icons} from '@/constants/icons';
+
 const router = useRouter();
 
 export const MenuItems = [

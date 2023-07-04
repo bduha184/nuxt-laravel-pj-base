@@ -4,7 +4,7 @@ import { Url } from "@/constants/url";
 import {MenuItems} from "@/constants/menuItems";
 import { useRouter } from "nuxt/app";
 const router = useRouter();
-import { mdiAccount } from '@mdi/js'
+import { mdiAccount ,mdiHome,mdiAccountCircle,mdiBike,mdiInformation,mdiMapMarker,mdiBicycle} from '@mdi/js'
 
 const state = reactive({
   name: "",
@@ -17,44 +17,45 @@ const toggleMenu = () => {
 
 const menuLinks = computed(()=> {
   return [
+
   {
       text: "ホーム",
-      icon: "mdiAccount",
+      icon: mdiHome,
       func: () => router.push(Url.TOP),
     },
     {
       text: "マイページ",
-      icon: "mdiAccount",
+      icon: mdiAccountCircle,
       func: () => router.push(Url.MEMBER),
     },
     {
       text: "サイクリング募集",
-      icon: "mdiAccount",
+      icon: mdiBike,
       func: () => router.push(Url.RECRUIT),
     },
     {
       text: "サイクリング情報",
-      icon: "mdiAccount",
+      icon:  mdiInformation,
       func: () => router.push(Url.INFO),
     },
     {
       text: "みんなの愛車",
-      icon: "mdiAccount",
+      icon: mdiBicycle,
       func: () => router.push(Url.INTRODUCTION),
     },
     {
       text: "ルート検索",
-      icon: "mdiAccount",
+      icon:  mdiMapMarker,
       func: () => router.push(Url.SEARCH),
     },
     {
       text: "新規登録",
-      icon: "mdiAccount",
+      icon:  mdiAccount,
       func: () => router.push(Url.SIGNUP),
     },
     {
       text: "ログイン",
-      icon: "mdiAccount",
+      icon: mdiAccount,
       func: () => router.push(Url.LOGIN),
     },
   ]
@@ -71,27 +72,27 @@ const menuLinks = computed(()=> {
       location="right"
       class="pt-15"
     >
-      <v-list>
+      <!-- <v-list>
         <v-list-item
         prepend-avatar="/images/user_dummy.png"
         subtitle="Logged in"
         />
       </v-list>
-      <v-divider />
-      <v-list density="compact">
-        <v-list-item
-          v-for="(item, i) in menuLinks"
-          :key="i"
-          :value="item"
-          active-color="primary"
-          @click="item.func"
-        >
-          <v-list-item-avatar>
-            <!-- <v-icon :icon="item.icon" /> -->
-            <v-icon :icon="mdiAccount" />
-          </v-list-item-avatar>
-          <v-list-item-title>{{ item.text }}</v-list-item-title>
-        </v-list-item>
+      <v-divider /> -->
+
+      <v-list density="compact" nav>
+          <v-list-item
+            v-for="(item, i) in menuLinks"
+            :key="i"
+            :value="item"
+            active-color="primary"
+            @click="item.func"
+          >
+          <template v-slot:prepend>
+              <v-icon :icon="item.icon" />
+          </template>
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar class="overflow-visible px-2" color="primary" prominent>
