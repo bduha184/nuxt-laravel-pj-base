@@ -89,7 +89,10 @@ const menuLinks = computed(()=> {
             @click="item.func"
           >
           <template v-slot:prepend>
-              <v-icon :icon="item.icon" />
+              <v-icon
+              :icon="item.icon"
+              class=" relative before:absolute before:w-10 before:h-10 before:border-2 before:border-gray-400 before:rounded-full"
+              />
           </template>
             <v-list-item-title
               class="pl-2 ml-2 relative before:absolute before:left-0 before:top-0 before:h-full before:w-[2px] before:bg-orange-600 z-100"
