@@ -48,7 +48,7 @@ const menuLinks = computed(()=> {
         <v-col v-for="(item, index) in menuLinks" :key="index" cols="6" md="4">
           <v-card
           @click="item.func"
-          class="text-center border w-60 h-60 m-auto d-flex flex-column justify-center align-center"
+          class="text-center w-40 h-40 border d-flex flex-column justify-center align-center"
           >
               <v-icon
               :icon="item.icon"
