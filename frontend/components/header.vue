@@ -104,7 +104,11 @@ const menuLinks = computed(()=> {
       <!-- <logo /> -->
       <v-toolbar-title
       class="text-red font-weight-bold"
-        >Cycle Community</v-toolbar-title
+        >
+      <NuxtLink :to="`${Url.TOP}`">
+        Cycle Community
+      </NuxtLink>
+        </v-toolbar-title
       >
       <v-spacer />
       <NuxtLink :to="Url.LOGIN" class="invisible md:visible">
