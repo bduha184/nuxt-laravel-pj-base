@@ -42,30 +42,29 @@ const menuLinks = computed(()=> {
 
 
 <template>
-  <v-card class="mx-auto">
-    <v-container fluid>
-      <v-row dense>
-        <v-col v-for="(item, index) in menuLinks" :key="index" cols="6" md="4">
-          <v-card
-          @click="item.func"
-          class="text-center w-40 h-40 border d-flex flex-column justify-center align-center"
-          >
-              <v-icon
-              :icon="item.icon"
-              class="relative before:absolute before:w-10 before:h-10 before:border-2 before:border-gray-400 before:rounded-full"
-              >
-              </v-icon>
-              <v-card-title
-              class="relative before:absolute before:w-2 before:h-10 before:bg-orange-600 before:left-0"
-              >
-                {{ item.text }}
-              </v-card-title>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
-
+  <v-container>
+    <v-card class="mx-auto">
+        <v-row dense>
+          <v-col v-for="(item, index) in menuLinks" :key="index" cols="6" md="4">
+            <v-card
+            @click="item.func"
+            class="text-center w-40 h-40 border d-flex flex-column justify-center align-center"
+            >
+                <v-icon
+                :icon="item.icon"
+                class="relative before:absolute before:w-10 before:h-10 before:border-2 before:border-gray-400 before:rounded-full"
+                >
+                </v-icon>
+                <v-card-title
+                class="relative before:absolute before:w-2 before:h-10 before:bg-orange-600 before:left-0"
+                >
+                  {{ item.text }}
+                </v-card-title>
+            </v-card>
+          </v-col>
+        </v-row>
+    </v-card>
+  </v-container>
 </template>
 
 <style scoped>

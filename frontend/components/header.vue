@@ -100,7 +100,12 @@ const menuLinks = computed(()=> {
           </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar class="overflow-visible px-2" color="primary" prominent>
+    <v-app-bar
+    class="overflow-visible px-2 "
+    prominent
+    ><v-container
+    class="primary d-flex align-center"
+    >
       <!-- <logo /> -->
       <v-toolbar-title
       class="text-red font-weight-bold"
@@ -121,6 +126,8 @@ const menuLinks = computed(()=> {
         color="red"
         @click.stop="toggleMenu"
       />
+
+    </v-container>
     </v-app-bar>
   </div>
 </template>
